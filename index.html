@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Damitha Ranasinghe — Professional Graphic Designer specializing in vector tracing, social media design, print design, line art, illustration and pattern design." />
+  <title>Damitha Ranasinghe | Graphic Designer</title>
+
+  <style>
+    :root{
+      --black:#0b0b0d;
+      --white:#ffffff;
+      --muted:#707070;
+      --line:#e9e9e9;
+      --red:#ef2b2d;
+      --blue:#2196f3;
+      --soft:#f7f7f7;
+      --card:#ffffff;
+      --max:1180px;
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      color:var(--black);
+      background:var(--white);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{width:min(92%,var(--max));margin:auto}
+
+    /* NAVBAR */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:1000;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-size:25px;
+      font-weight:900;
+      letter-spacing:-1.5px;
+    }
+    .logo span{color:var(--red)}
+    .nav-links{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      list-style:none;
+      font-size:14px;
+      font-weight:700;
+    }
+    .nav-links a{transition:.2s}
+    .nav-links a:hover{color:var(--red)}
+    .nav-cta{
+      padding:11px 18px;
+      border-radius:100px;
+      background:var(--black);
+      color:#fff!important;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:130px 0 80px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      border-radius:50%;
+      background:linear-gradient(135deg,rgba(239,43,45,.08),rgba(33,150,243,.08));
+      right:-220px;top:120px;
+      z-index:-1;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      border:1px solid var(--line);
+      border-radius:100px;
+      padding:8px 14px;
+      color:#555;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:25px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:#20c56a;
+      box-shadow:0 0 0 5px rgba(32,197,106,.1);
+    }
+    h1{
+      font-size:clamp(52px,8vw,104px);
+      line-height:.94;
+      letter-spacing:-5px;
+      max-width:980px;
+      margin-bottom:30px;
+    }
+    h1 .red{color:var(--red)}
+    h1 .blue{color:var(--blue)}
+    .hero-text{
+      max-width:680px;
+      color:#686868;
+      font-size:19px;
+      line-height:1.7;
+      margin-bottom:32px;
+    }
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 23px;
+      border-radius:100px;
+      font-weight:800;
+      font-size:14px;
+      transition:.2s;
+    }
+    .btn-dark{background:var(--black);color:#fff}
+    .btn-outline{border:1px solid #d8d8d8}
+    .btn:hover{transform:translateY(-2px)}
+
+    /* SECTIONS */
+    section{padding:110px 0}
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:48px;
+    }
+    .section-kicker{
+      color:var(--red);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:8px;
+    }
+    h2{
+      font-size:clamp(36px,5vw,62px);
+      line-height:1;
+      letter-spacing:-2.5px;
+    }
+    .section-intro{
+      max-width:450px;
+      color:var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:60px;
+      align-items:start;
+    }
+    .about-copy p{
+      color:#555;
+      font-size:18px;
+      margin-bottom:18px;
+    }
+    .facts{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .fact{
+      background:var(--soft);
+      border-radius:18px;
+      padding:24px;
+    }
+    .fact strong{
+      display:block;
+      font-size:25px;
+      margin-bottom:4px;
+    }
+    .fact span{font-size:13px;color:#777}
+
+    /* SERVICES */
+    .services{
+      background:#fafafa;
+    }
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .service{
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:var(--radius);
+      padding:30px;
+      min-height:210px;
+      transition:.25s;
+    }
+    .service:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 40px rgba(0,0,0,.07);
+    }
+    .service-number{
+      font-size:12px;
+      font-weight:900;
+      color:var(--red);
+      margin-bottom:35px;
+    }
+    .service h3{font-size:22px;margin-bottom:8px}
+    .service p{font-size:14px;color:#777}
+
+    /* PORTFOLIO */
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .project{
+      min-height:270px;
+      border-radius:var(--radius);
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:end;
+      overflow:hidden;
+      position:relative;
+      background:#f3f3f3;
+      border:1px solid #eee;
+    }
+    .project:nth-child(2){background:#101010;color:#fff}
+    .project:nth-child(3){background:#eef7ff}
+    .project:nth-child(4){background:#fff1f1}
+    .project:nth-child(5){background:#f4f4f4}
+    .project:nth-child(6){background:#eaf7f1}
+    .project::before{
+      content:"";
+      position:absolute;
+      width:150px;height:150px;
+      border-radius:50%;
+      right:-35px;top:-35px;
+      border:35px solid rgba(239,43,45,.12);
+    }
+    .project h3{font-size:23px;position:relative}
+    .project p{font-size:13px;opacity:.65;position:relative}
+
+    /* GRAPHIDAM */
+    .graphidam-section{
+      background:#fafafa;
+    }
+    .brand-dot{
+      color:var(--red);
+    }
+    .graphidam-intro{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:28px;
+      padding:30px;
+      margin-bottom:18px;
+    }
+    .graphidam-mark{
+      width:76px;
+      height:76px;
+      flex:0 0 76px;
+      display:grid;
+      place-items:center;
+      border-radius:20px;
+      background:var(--black);
+      color:#fff;
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+    .graphidam-intro h3{
+      font-size:24px;
+      margin-bottom:5px;
+    }
+    .graphidam-intro p{
+      color:#777;
+      font-size:14px;
+    }
+    .graphidam-links{
+      grid-template-columns:repeat(3,1fr);
+    }
+    .graphidam-social-group{
+      margin-top:52px;
+    }
+    .graphidam-social-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+    .personal-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+    .contact-note{
+      color:#888;
+      font-size:12px;
+      margin-top:14px;
+      max-width:760px;
+    }
+    .contact-note strong{
+      color:#555;
+    }
+
+    /* SOCIAL */
+    .social-groups{
+      display:grid;
+      gap:48px;
+    }
+    .social-group{
+      display:grid;
+      gap:18px;
+    }
+    .group-title{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .group-title span{
+      font-size:12px;
+      font-weight:900;
+      color:var(--red);
+      letter-spacing:1px;
+    }
+    .group-title h3{
+      font-size:22px;
+      letter-spacing:-.5px;
+    }
+    .social-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .social{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      transition:.2s;
+    }
+    .social:hover{
+      border-color:#bbb;
+      transform:translateY(-2px);
+    }
+    .social strong{font-size:16px}
+    .social small{display:block;color:#888;margin-top:2px}
+    .arrow{font-size:20px}
+
+    /* CONTACT */
+    .contact{
+      background:var(--black);
+      color:#fff;
+      border-radius:32px;
+      padding:70px;
+    }
+    .contact .section-kicker{color:#ff5153}
+    .contact h2{max-width:760px}
+    .contact p{
+      color:#aaa;
+      max-width:650px;
+      margin:20px 0 30px;
+    }
+    .contact-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .contact .btn-outline{
+      border-color:#444;
+      color:#fff;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:35px 0;
+      color:#888;
+      font-size:13px;
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+
+    /* MOBILE */
+    .menu-btn{display:none;background:none;border:0;font-size:28px}
+    @media(max-width:850px){
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .about-grid{grid-template-columns:1fr}
+      .service-grid,.portfolio-grid{grid-template-columns:1fr 1fr}
+      .social-grid{grid-template-columns:1fr 1fr}
+      .contact{padding:45px 28px}
+    }
+    @media(max-width:560px){
+      nav{height:68px}
+      .hero{padding-top:110px}
+      h1{letter-spacing:-3px}
+      .hero-text{font-size:16px}
+      section{padding:75px 0}
+      .section-head{display:block}
+      .section-intro{margin-top:18px}
+      .service-grid,.portfolio-grid,.social-grid,
+      .personal-grid,.graphidam-social-grid{grid-template-columns:1fr}
+      .graphidam-links{grid-template-columns:1fr}
+      .graphidam-intro{align-items:flex-start}
+      .facts{grid-template-columns:1fr 1fr}
+      .fact{padding:18px}
+      .footer-inner{display:block}
+      .footer-inner p{margin-top:8px}
+    }
+  
+    /* Compact personal profile buttons */
+    .personal-grid { display:flex !important; flex-wrap:wrap; gap:8px; }
+    .personal-grid .social-card { padding:8px 12px !important; min-height:auto !important; border-radius:999px !important; }
+    .personal-grid .social-card h3 { font-size:12px !important; margin:0 !important; }
+    .personal-grid .social-card p, .personal-grid .social-card small, .personal-grid .social-card span { display:none !important; }
+    .personal-grid .social-icon { width:24px !important; height:24px !important; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">Damitha Ranasinghe<span>.</span></a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#graphidam">GraphiDam</a></li>
+          <li><a href="#social">Social</a></li>
+          <li><a href="#contact" class="nav-cta">Let's Work</a></li>
+        </ul>
+
+        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> Available for freelance projects</div>
+
+        <h1>
+          Design that makes<br>
+          <span class="red">ideas</span> look <span class="blue">better.</span>
+        </h1>
+
+        <p class="hero-text">
+          I'm <strong>Damitha Ranasinghe</strong>, a freelance graphic designer
+          creating clean, professional and purposeful visual designs for
+          clients worldwide.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-dark" href="#portfolio">View My Work</a>
+          <a class="btn btn-outline" href="#contact">Start a Project →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About me</div>
+            <h2>Design with purpose.</h2>
+          </div>
+          <p class="section-intro">
+            A design-focused freelance journey built around quality,
+            communication and client-focused creative solutions.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I’m a freelance graphic designer specializing in digital and
+              print-focused design. I work with clients to turn ideas,
+              references and requirements into polished visual outcomes.
+            </p>
+            <p>
+              My work includes vector tracing, social media graphics, print
+              design, line art, illustration and pattern design. I also
+              provide scalable vector artwork suitable for professional
+              printing and large-format applications.
+            </p>
+            <p>
+              I started my freelance journey on Fiverr in 2024 and continue
+              building my creative career through international client work.
+            </p>
+          </div>
+
+          <div class="facts">
+            <div class="fact">
+              <strong>2024</strong>
+              <span>Freelance journey started</span>
+            </div>
+            <div class="fact">
+              <strong>Fiverr</strong>
+              <span>Freelance platform</span>
+            </div>
+            <div class="fact">
+              <strong>Vector</strong>
+              <span>Print-ready artwork</span>
+            </div>
+            <div class="fact">
+              <strong>Worldwide</strong>
+              <span>Working with clients globally</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What I do</div>
+            <h2>Creative services.</h2>
+          </div>
+          <p class="section-intro">
+            Focused graphic design services for brands, businesses,
+            creators and print projects.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-number">01</div>
+            <h3>Vector Tracing</h3>
+            <p>Clean, scalable vector artwork from images, sketches and existing graphics.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-number">02</div>
+            <h3>Social Media Design</h3>
+            <p>Professional social posts and visual content designed for digital platforms.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-number">03</div>
+            <h3>Print Design</h3>
+            <p>Print-ready artwork for posters, packaging, promotional materials and more.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-number">04</div>
+            <h3>Line Art Illustration</h3>
+            <p>Minimal, clean and detailed line-art illustrations for creative projects.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-number">05</div>
+            <h3>Pattern Design</h3>
+            <p>Custom seamless patterns using illustrations, motifs and repeat compositions.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-number">06</div>
+            <h3>Illustration</h3>
+            <p>Custom visual artwork developed around your concept, style and requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected work</div>
+            <h2>My portfolio.</h2>
+          </div>
+          <p class="section-intro">
+            Replace these project cards with your actual project images and
+            portfolio links.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="project">
+            <h3>Vector Tracing</h3>
+            <p>Clean & scalable artwork</p>
+          </article>
+
+          <article class="project">
+            <h3>Print Design</h3>
+            <p>Professional print-ready graphics</p>
+          </article>
+
+          <article class="project">
+            <h3>Pattern Design</h3>
+            <p>Custom seamless patterns</p>
+          </article>
+
+          <article class="project">
+            <h3>Line Art</h3>
+            <p>Minimal illustration work</p>
+          </article>
+
+          <article class="project">
+            <h3>Social Media</h3>
+            <p>Digital content & posts</p>
+          </article>
+
+          <article class="project">
+            <h3>Illustration</h3>
+            <p>Custom creative artwork</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GRAPHIDAM ================= -->
+    <section id="graphidam" class="graphidam-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">My design brand</div>
+            <h2>GraphiDam<span class="brand-dot">.</span></h2>
+          </div>
+          <p class="section-intro">
+            A dedicated space for my graphic design content, creative videos,
+            design tips, projects and visual work.
+          </p>
+        </div>
+
+        <div class="graphidam-intro">
+          <div class="graphidam-mark">GD</div>
+          <div>
+            <h3>Graphic design by Damitha Ranasinghe</h3>
+            <p>
+              Follow <strong>GraphiDam</strong> for graphic design videos,
+              creative work, design ideas, process videos and new visual content.
+            </p>
+          </div>
+        </div>
+
+        <div class="social-grid graphidam-links">
+          <!-- Replace each # with your actual GraphiDam profile/page URL -->
+          <a class="social" href="#" target="_blank" rel="noopener">
+            <div><strong>Instagram</strong><small>GraphiDam</small></div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="social" href="#" target="_blank" rel="noopener">
+            <div><strong>TikTok</strong><small>GraphiDam</small></div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="social" href="#" target="_blank" rel="noopener">
+            <div><strong>Facebook Page</strong><small>GraphiDam</small></div>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOCIAL ================= -->
+    <section id="social">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Connect</div>
+            <h2>Find me online.</h2>
+          </div>
+          <p class="section-intro">
+            Personal profiles and professional design platforms — clearly separated
+            so you can connect with the right side of my work.
+          </p>
+        </div>
+
+        <!-- PERSONAL -->
+        <div class="social-group">
+          <div class="group-title">
+            <span>01</span>
+            <h3>Personal Profiles</h3>
+          </div>
+
+          <div class="social-grid personal-grid">
+            <a class="social" href="https://www.instagram.com/damitha_ra/" target="_blank" rel="noopener">
+              <div><strong>Instagram</strong><small>Personal Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.facebook.com/damitharanasinghe" target="_blank" rel="noopener">
+              <div><strong>Facebook</strong><small>Personal Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.tiktok.com/@damitha_ra" target="_blank" rel="noopener">
+              <div><strong>TikTok</strong><small>Personal Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.threads.net/@damitha_ra" target="_blank" rel="noopener">
+              <div><strong>Threads</strong><small>Personal Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.linkedin.com/in/damitha-ra" target="_blank" rel="noopener">
+              <div><strong>LinkedIn</strong><small>Professional Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://x.com/damitha_ra" target="_blank" rel="noopener">
+              <div><strong>X</strong><small>Personal Profile</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="mailto:damitha061@gmail.com">
+              <div><strong>Email</strong><small>Personal Contact</small></div>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- GRAPHIDAM -->
+        <div class="social-group graphidam-social-group">
+          <div class="group-title">
+            <span>02</span>
+            <h3>GraphiDam — Graphic Design</h3>
+          </div>
+
+          <div class="social-grid graphidam-social-grid">
+            <a class="social" href="https://www.fiverr.com/damitha_ra" target="_blank" rel="noopener">
+              <div><strong>Fiverr</strong><small>Graphic Design Services</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.instagram.com/graphi_dam/" target="_blank" rel="noopener">
+              <div><strong>Instagram</strong><small>GraphiDam</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.facebook.com/graphidam" target="_blank" rel="noopener">
+              <div><strong>Facebook Page</strong><small>GraphiDam</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.threads.net/@graphi_dam" target="_blank" rel="noopener">
+              <div><strong>Threads</strong><small>GraphiDam</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://www.tiktok.com/@graphi_dam" target="_blank" rel="noopener">
+              <div><strong>TikTok</strong><small>GraphiDam</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="https://wa.me/94779010443" target="_blank" rel="noopener" aria-label="WhatsApp link pending phone number">
+              <div><strong>WhatsApp</strong><small>GraphiDam Contact</small></div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="social" href="mailto:graphidam@gmail.com">
+              <div><strong>Email</strong><small>GraphiDam Business</small></div>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <p class="contact-note">
+            <strong>WhatsApp Username:</strong> @graphi_dam
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="section-kicker">Have a project?</div>
+          <h2>Let's turn your idea into something visual.</h2>
+          <p>
+            Tell me what you need, share your requirements and let's create
+            a professional design that fits your project.
+          </p>
+
+          <div class="contact-links">
+            <!-- Replace the email and Fiverr link with your real details -->
+            <a class="btn btn-outline" href="mailto:graphidam@gmail.com">
+              Email Me
+            </a>
+            <a class="btn btn-dark" href="https://www.fiverr.com/damitha_ra" target="_blank" rel="noopener">
+              Hire Me on Fiverr →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <strong>Damitha Ranasinghe<span style="color:#ef2b2d">.</span></strong>
+      <p>© 2026 Damitha Ranasinghe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const links = document.querySelector('.nav-links');
+      const isOpen = links.style.display === 'flex';
+
+      if(isOpen){
+        links.style.display = '';
+      }else{
+        links.style.display = 'flex';
+        links.style.position = 'absolute';
+        links.style.top = '68px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.padding = '22px';
+        links.style.background = '#fff';
+        links.style.flexDirection = 'column';
+        links.style.alignItems = 'flex-start';
+        links.style.borderBottom = '1px solid #eee';
+      }
+    }
+  </script>
+
+</body>
+</html>
